@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [User_ReadAcess]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="com.PageFactory.Listeners"/>
+  </listeners>
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="com.LTM.testcase.User_ReadAcess">
+        <methods>
+          <include name="LinuxConMGMT"/>
+          <include name="VerifyReadAcess_tab_Profile"/>
+          <include name="Linux_Readacess_Administration"/>
+          <include name="VerifyReadAcess_ContexMenu"/>
+          <include name="Linux_Readacess_SystemSetting" invocation-numbers="0"/>
+          <include name="Linux_Readacess_UserSetting"/>
+          <include name="VerifyReadAcess_Security"/>
+          <include name="VerifyReadAcess_softwaredeploment"/>
+          <include name="VerifyReadAcess_UserSetting"/>
+          <include name="VerifyReadAcess_Administration"/>
+        </methods>
+      </class> <!-- com.LTM.testcase.User_ReadAcess -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [User_ReadAcess] -->

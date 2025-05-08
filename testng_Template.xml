@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Template_Manager">
+
+<listeners>
+   <listener class-name="com.PageFactory.Listeners"/>
+</listeners>
+
+  <test thread-count="5" name="Template_MGR">
+    <classes>
+      <class name="com.LTM.testcase.Template_MGR"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Template_Manager -->

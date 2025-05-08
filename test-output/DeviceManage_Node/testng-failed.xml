@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [DeviceManage_Node]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="com.PageFactory.Listeners"/>
+  </listeners>
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="com.LTM.testcase.DeviceManager_Node">
+        <methods>
+          <include name="VMViewGlobal"/>
+          <include name="regionandlocation"/>
+          <include name="x802security"/>
+          <include name="performancemgmt"/>
+          <include name="Con_Teradici"/>
+          <include name="Con_RDP"/>
+          <include name="printer" invocation-numbers="0"/>
+          <include name="timelanguage"/>
+          <include name="Con_Citix"/>
+          <include name="security"/>
+          <include name="usersetting"/>
+          <include name="Con_VMWare"/>
+          <include name="Con_CustomExeCon"/>
+          <include name="deviceMangeerDomian" invocation-numbers="0"/>
+          <include name="remoteagent"/>
+          <include name="SoftwareDeploment"/>
+          <include name="periferal"/>
+          <include name="powerMgmt"/>
+          <include name="syncdevice"/>
+          <include name="applicationcommand"/>
+          <include name="ethernetsetup"/>
+          <include name="deviceMangeerComputer" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.LTM.testcase.DeviceManager_Node -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [DeviceManage_Node] -->
