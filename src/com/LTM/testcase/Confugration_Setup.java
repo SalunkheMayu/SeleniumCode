@@ -20,7 +20,7 @@ import atu.testrecorder.exceptions.ATUTestRecorderException;
 public class Confugration_Setup 
 {	
 	utility selUtility=new utility();
-	WebDriver wd= utility.startBrowser("chrome", "https://192.168.3.13");
+	WebDriver wd= utility.startBrowser("chrome", "https://unifiedx.sundynetech.com/Login.aspx");
 	ConfigurationSetup_Page cp=new ConfigurationSetup_Page(wd);
 	
 	Login_Page abc = new Login_Page(wd);

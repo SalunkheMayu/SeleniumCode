@@ -14,6 +14,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
@@ -25,7 +26,8 @@ import org.testng.Assert;
 
 import com.PageFactory.utility;
 
-public class ConfigurationSetup_Page {
+public class ConfigurationSetup_Page 
+{
 
 	public WebDriver wd;
 	private final String xlsPath = "D:\\Device Manager\\REPO_Details-update.xlsx";   //C:\\Users\\Administrator\\Desktop\\Agent Setup\\REPO_Details-update_OC.xlsx
@@ -34,18 +36,23 @@ public class ConfigurationSetup_Page {
 	// new languages\\Greek.xlsx";
 
 	utility selUtility = new utility();
+	Actions action;
 
 	public ConfigurationSetup_Page(WebDriver wd) 
 	{
 		this.wd = wd;
 		wd.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		PageFactory.initElements(wd, this);
+		action= new Actions(wd) ;
 	}
 	
 	@FindBy(xpath = "(//a[@id='ibtntHome'])[1]")       //i[@class='icon-home dsico-Simple']
 	public WebElement homeIcon;
+	
+	@FindBy(xpath = "//div[@id='btnExpandMenu']")
+	WebElement movetoexpandtab;//i[@class='icon-logout dsico-Simple']
 
-	@FindBy(xpath = "//div[@id='btnExpandMenu']")  //Done
+	@FindBy(xpath = "//a[@id='kt_aside_toggle']")  //Done //div[@id='btnExpandMenu']
 	WebElement btnExpandMenu;
 
 	@FindBy(xpath = "(//a[@id='btSPAdmin'])[1]")  // (//a[@id='btSPAdmin'])[1]    //a[@id='btSPAdmin']
@@ -248,13 +255,13 @@ public class ConfigurationSetup_Page {
 	@FindBy(xpath = "//div[@class='col-md-12 loading']")
 	WebElement Loader1;
 
-	@FindBy(xpath = "//li[@id='divConfigurationSetup']")
-	WebElement tabconfig;
+	@FindBy(xpath = "//div[@class='topbar']//div[@id='divConfigurationSetup']")
+	WebElement tabconfig_Top_Bar;
 
 	public void mailerEngine() throws InterruptedException 
 	
 	{
-		tabconfig.click();
+		tabconfig_Top_Bar.click();
 		btSPAdmin.click();
 		btnExpandMenu.click();
 		tabmailerEngine.click();
@@ -300,6 +307,8 @@ public class ConfigurationSetup_Page {
 
 	}
 
+
+	
 	public void openRepo() throws IOException  
 	{
 		
@@ -309,7 +318,9 @@ public class ConfigurationSetup_Page {
 		 }
 	//	 else 
 		 {
-			tabconfig.click();
+			 tabconfig_Top_Bar.click();
+			 action.moveToElement(movetoexpandtab).build().perform();
+			 
 			btnExpandMenu.click();}
 	//				
 		 

@@ -159,6 +159,7 @@ public class MUI_Page extends utility {
 
 				btnedit_First.click();
 
+				@SuppressWarnings("deprecation")
 				String ABC_First = verify_First.getAttribute("Value");
 
 				if (ABC_First.equals(MUICell))
@@ -178,7 +179,7 @@ public class MUI_Page extends utility {
 				if (utility.isClickable(btnedit_Second, wd, 1) == true) 
 				{
 					btnedit_Second.click();
-					String ABC_Second = verify_Second.getAttribute("Value");
+					String ABC_Second = verify_Second.getDomAttribute("Value");
 
 					if (ABC_Second.equals(MUICell))
 
@@ -201,7 +202,7 @@ public class MUI_Page extends utility {
 				if (utility.isClickable(btnedit_Third, wd, 1) == true) {
 
 					btnedit_Third.click();
-					String ABC_Third = verify_Third.getAttribute("Value");
+					String ABC_Third = verify_Third.getDomAttribute("Value");
 
 					if (ABC_Third.equals(MUICell))
 

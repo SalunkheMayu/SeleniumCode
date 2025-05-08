@@ -24,7 +24,7 @@ import com.PageFactory.utility;
 import atu.testrecorder.ATUTestRecorder;
 import atu.testrecorder.exceptions.ATUTestRecorderException;
 
-public class DeviceManager_Node<ATUTestRecorder> {
+public class DeviceManager_Node {
 
 	utility selUtility=new utility();
 	WebDriver wd= utility.startBrowser("chrome", "https://192.168.3.13");
